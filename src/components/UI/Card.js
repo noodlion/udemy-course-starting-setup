@@ -1,7 +1,6 @@
-import React from 'react';
 import './Card.css';
 
-const Card = (props) => {
+function Card(props) {
     /*tiene un espacio dsps de card */
   const classes = 'card ' + props.className;
 
