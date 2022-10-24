@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 //no closing tags in the input because there will be no element between the opening and closing tag
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -17,6 +17,8 @@ const ExpenseForm = () => {
   //functions for the onChange events on the inputs, the argument name event is one selected by me
   // para comentar muchas lineas es ctrl k c
 
+
+  //-------------------------HANDLERS------------------------------
   const titleChangeHandler = (title) => {
     setEnteredTitle(title.target.value);
     // setUserInput({
@@ -55,7 +57,8 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
+    //console.log(expenseData);
     //sets an empty string so the form resets to empty when submitting
     setEnteredTitle('');
     setEnteredAmount('');
