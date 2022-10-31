@@ -28,8 +28,11 @@ const DUMMY_EXPENSES = [
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
+  //cleaner way to update the state of the expenses when you already have data on an array and want to add some more
   const addExpenseHandler = (expense) => {
-    setExpenses([expense, ...expenses]);
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
   };
 
   return (
