@@ -33,7 +33,8 @@ const Expenses = (props) => {
         ))}
       </Card>
     </div>
-  );
-};
 
-export default Expenses;
+  );
+}
+
+export default Expenses; 
